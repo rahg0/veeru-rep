@@ -18,6 +18,17 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ github.event.inputs.branch || github.ref }}
+          
+      # Debug step to understand the context
+      - name: Debug Context
+        run: |
+          echo "Event name: ${{ github.event_name }}"
+          echo "Ref: ${{ github.ref }}"
+          echo "SHA: ${{ github.sha }}"
+          echo "Repository: ${{ github.repository }}"
+          ls -la $GITHUB_WORKSPACE
+          
       - name: Run Orca Secrets Scan
         uses: orcasecurity/shiftleft-secrets-action@v1
         with:
