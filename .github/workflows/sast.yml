@@ -23,4 +23,3 @@ jobs:
         with:
           api_token: ${{ secrets.orca_security_api_token }}
           project_key: ${{ env.PROJECT_KEY }}
-          # ignore_git_history_baseline: false
