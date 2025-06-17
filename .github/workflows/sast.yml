@@ -9,7 +9,7 @@ on:
 
 jobs:
   sast-report:
-    name: Daily SAST report
+    name: Daily Secrets report
     runs-on: ubuntu-latest
     env:
       PROJECT_KEY: slrk
